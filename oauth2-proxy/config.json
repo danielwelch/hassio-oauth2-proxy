@@ -1,0 +1,26 @@
+{
+  "name": "Oauth2 Proxy",
+  "version": "0.1.0",
+  "slug": "oauth2-proxy",
+  "description": "Oauth2 Proxy for 2FA in Hass.io",
+  "url": "https://github.com/danielwelch/hassio-oauth2-proxy",
+  "startup": "before",
+  "boot": "auto",
+  "map": ["ssl"],
+  "ports": { "4180/tcp": 4180 },
+  "options": {
+    "auth_url": "https://myhassiodomain.duckdns.org/oauth2/callback",
+    "client_id": "",
+    "client_secret": "",
+    "cookie_name": "",
+    "cookie_secret": ""
+  },
+  "schema": {
+    "auth_url": "str",
+    "client_id": "str",
+    "client_secret": "str",
+    "cookie_name": "str",
+    "cookie_secret": "str"
+  },
+  "image": "dwelch2101/oauth2-proxy-{arch}"
+}
